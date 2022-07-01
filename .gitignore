@@ -1,0 +1,8 @@
+.idea/*
+build/
+
+ed25519-keys
+node_modules
+package-lock.json
+
+.env

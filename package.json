@@ -1,0 +1,44 @@
+{
+  "name": "casper-erc20-js-client",
+  "version": "0.2.0",
+  "description": "> TODO: description",
+  "author": "Jan Hoffmann <jan@casperlabs.io>",
+  "homepage": "",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "casper-js-client-helper": "^1.0.1",
+    "casper-js-sdk": "2.9.1",
+    "module-alias": "^2.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_moduleAliases": {
+    "util": "build/util",
+    "consts": "build/consts",
+    "clients": "build/clients",
+    "helpers": "build/helpers",
+    "jobs": "build/jobs"
+  },
+  "main": "src/jobs/battelog/index.ts",
+  "scripts": {
+    "ts": "tsc --watch",
+    "install": "nodemon ./build/index.js",
+    "install:erc1820": "nodemon ./build/index.js erc1820",
+    "install:erc777": "nodemon ./build/index.js erc777",
+    "install:erc777Sender": "nodemon ./build/index.js erc777Sender",
+    "install:erc777Recipient": "nodemon ./build/index.js erc777Recipient",
+    "test": "nodemon ./build/index.js -t",
+    "dist": "npm run clean && npm run build",
+    "clean": "rm -rf dist/"
+  }
+}
