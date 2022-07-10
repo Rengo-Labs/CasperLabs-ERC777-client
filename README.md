@@ -6,13 +6,13 @@ This JavaScript client gives you an easy way to install and interact with the ER
 
 First of all, you need to download all plugins:
 
-```
+``` bash
 npm install
 ```
 
 ## How to deploy every Contract
 And then, you can run **every** job using the follow commands:
-```
+``` bash
 npm run install:erc1820
 
 npm run install:erc777
@@ -26,7 +26,7 @@ npm run install:erc777_sender
 and paste it in [ERC-777](src/jobs/erc777/installer.js), [ERC-777-RECIPIENT](src/jobs/erc777_recipient/installer.js) 
 and [ERC-777-SENDER](src/jobs/erc777_sender/installer.js) correspondingly.
 
-##Guide to use this client
+## Guide to use this client
 These guides contain steps to implement every contract client and usage examples
 - [ERC1820](src/clients/erc1820/README.md)
 - [ERC777](src/clients/erc777/README.md)
