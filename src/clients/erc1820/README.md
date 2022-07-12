@@ -3,13 +3,13 @@
 This JavaScript client gives you an easy way to install and interact with the ERC-1820 contract.
 
 ## How to deploy ERC1820
-And then, you can run job using the follow command:
+Run job using the follow command:
 ``` bash
 npm run install:erc1820
 ```
 
 ## To run usage example
-If you can run the next command to see an example of an implemented erc1820
+Run the next command to see an example of an implemented erc1820
 ``` bash
 npm run run:erc1820
 ```

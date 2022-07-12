@@ -11,13 +11,19 @@ npm install
 ```
 
 ## How to deploy ERC777 Recipient
-And then, you can run **every** job using the follow commands:
+Run job using the follow command:
 ``` bash
 npm run install:erc777_recipient
 ```
 
 **NOTE**: To install `ERC-777-RECIPIENT` you must copy the **erc1820 and erc777 contract hash** 
 and paste it in [ERC-777-RECIPIENT Script](../../jobs/erc777_recipient/installer.js).
+
+## To run usage example
+Run the next command to see an example of an implemented erc777 recipient
+``` bash
+npm run run:erc777_recipient
+```
 
 ## Usage example
 To use this class, you have to import the next modules: `ERC777Recipient`, `casper-js-sdk`, `utils` and `ERC777`

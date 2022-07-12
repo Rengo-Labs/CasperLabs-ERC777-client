@@ -3,7 +3,7 @@
 This JavaScript client gives you an easy way to install and interact with the ERC-777 contract.
 
 ## How to deploy ERC777
-And then, you can run job using the follow command:
+Run job using the follow command:
 ``` bash
 npm run install:erc777
 ```
@@ -12,7 +12,7 @@ and paste it in [ERC-777 Script](../../jobs/erc777/installer.js).
 
 
 ## To run usage example
-If you can run the next command to see an example of an implemented erc1820
+Run the next command to see an example of an implemented erc777
 ``` bash
 npm run run:erc777
 ```
