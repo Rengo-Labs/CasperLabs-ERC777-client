@@ -8,7 +8,7 @@ And then, you can run job using the follow command:
 npm run install:erc777
 ```
 **NOTE**: To install `ERC-777` you must copy the **erc1820 contract hash**
-and paste it in [ERC-777 Script](src/jobs/erc777/installer.js).
+and paste it in [ERC-777 Script](../../jobs/erc777/installer.js).
 
 
 ## To run usage example

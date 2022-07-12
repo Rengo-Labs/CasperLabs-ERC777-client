@@ -17,7 +17,7 @@ npm run install:erc777_sender
 ```
 
 **NOTE**: To install `ERC-777-SENDER` you must copy the **erc1820 and erc777 contract hash** 
-and paste it in [ERC-777-SENDER Script](src/jobs/erc777_sender/installer.js).
+and paste it in [ERC-777-SENDER Script](../../jobs/erc777_sender/installer.js).
 
 ## Usage example
 To use this class, you have to import the next modules: `ERC777Sender`, `casper-js-sdk`, `utils` and `ERC777`
@@ -28,9 +28,9 @@ import {getAccounts} from "../../helpers/utils";
 import ERC777 from "../../clients/erc777/ERC777";
 ```
 
-To install the ERC777Sender, you must firstly install the [ERC1820](src/jobs/erc1820/installer.js)
-and [ERC777](src/jobs/erc777/installer.js) to get the **erc1820 contract hash**; 
-and then, you have to copy it and pass it as a [ERC777Sender](src/jobs/erc777/installer.js) parameter. 
+To install the ERC777Sender, you must firstly install the [ERC1820](../../jobs/erc1820/installer.js)
+and [ERC777](../../jobs/erc777/installer.js) to get the **erc1820 contract hash**; 
+and then, you have to copy it and pass it as a [ERC777Sender](../../jobs/erc777/installer.js) parameter. 
 ``` javascript
 //contract hash to replace with the correct erc1820 and erc777
 const erc1820ContractArray = Uint8Array.from(Buffer.from("hash-124b3d14aeae1668afde1f35a28162c98d25446b52d19a1058e3cef7ac545bfe".slice(5), 'hex'));
