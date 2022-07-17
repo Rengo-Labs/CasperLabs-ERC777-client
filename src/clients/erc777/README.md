@@ -4,7 +4,7 @@ This JavaScript client gives you an easy way to install and interact with the ER
 
 ## How to deploy ERC777
 Run job using the follow command:
-``` bash
+```bash
 npm run install:erc777
 ```
 **NOTE**: To install `ERC-777` you must copy the **erc1820 contract hash**
@@ -13,20 +13,28 @@ and paste it in [ERC-777 Script](../../jobs/erc777/installer.js).
 
 ## To run usage example
 Run the next command to see an example of an implemented erc777
-``` bash
+```bash
 npm run run:erc777
 ```
 
 ## Usage example
 To use this class, you have to import the next modules: `ERC777`, `casper-js-sdk` and `utils`
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 import ERC777 from '../../clients/erc777/ERC777';
 import {RuntimeArgs} from "casper-js-sdk";
 import {getAccounts} from "../../helpers/utils";
 ```
 
 ### How to install
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 //contract hash to replace with the correct erc1820
 const contractArray = Uint8Array.from(Buffer.from("hash-124b3d14aeae1668afde1f35a28162c98d25446b52d19a1058e3cef7ac545bfe".slice(5), 'hex'));
 
@@ -41,7 +49,11 @@ await erc777.install(RuntimeArgs.fromMap({
 ```
 
 ### How to initialize the contract to start performing interactions on the casper network.
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 const erc777 = new ERC777()
 
 // Initialization of contract. By default, initContract receives a contractHash (=null)
@@ -52,7 +64,11 @@ await erc777.initContract()
 ### How to get information
 Functions (getters) to retrieve values:
 
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 const tokenName = await erc777.name();
 
 const tokenSymbol = await erc777.symbol();
@@ -68,7 +84,11 @@ const defaultOperators = await erc777.getDefaultOperators();
 
 ### How to perform calls
 #### Send tokens
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 await erc777.send(RuntimeArgs.fromMap({
     recipient: CLValueBuilder.key(recipientHash),
     amount: CLValueBuilder.u256("100"),
@@ -76,26 +96,42 @@ await erc777.send(RuntimeArgs.fromMap({
 }));
 ```
 #### Burn tokens
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 await erc777.burn(RuntimeArgs.fromMap({
     amount: CLValueBuilder.u256("50"),
     data: CLValueBuilder.list([])
 }));
 ```
 #### Authorize an Operator
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 await erc777.authorizeOperator(RuntimeArgs.fromMap({
     operator: CLValueBuilder.key(operatorHash)
 }));
 ```
 #### Revoke an Operator
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 await erc777.revokeOperator(RuntimeArgs.fromMap({
     operator: CLValueBuilder.key(operatorHash)
 }))
 ``` 
 #### Perform a transfer of tokens on behalf of token owner
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 await erc777.operatorSend(RuntimeArgs.fromMap({
     sender: CLValueBuilder.key(ownerHash),
     recipient: CLValueBuilder.key(recipientHash),
@@ -105,7 +141,11 @@ await erc777.operatorSend(RuntimeArgs.fromMap({
 }));
 ```
 #### Perform a burn of tokens on behalf of token owner
+<<<<<<< HEAD
 ``` javascript
+=======
+```javascript
+>>>>>>> 85abf21 (it adds more details)
 await erc777.operatorBurn(RuntimeArgs.fromMap({
     account: CLValueBuilder.key(ownerHash),
     amount: CLValueBuilder.u256("10"),

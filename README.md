@@ -6,13 +6,27 @@ This JavaScript client gives you an easy way to install and interact with the ER
 
 First of all, you need to download all plugins:
 
-``` bash
+```bash
 npm install
+```
+
+After that, you must configure the keys of your wallet. You need to put 
+the `public_key.pem`and `secret_key.pem` in the same directory and link it 
+with your `PATH_TO_SOURCE_KEYS` from the `.env` file.
+
+This is going to read it by the `getKeyPairOfContract` function:
+```javascript
+export const getKeyPairOfContract = (pathToFaucet) => {
+  return Keys.Ed25519.parseKeyFiles(
+    `${pathToFaucet}/public_key.pem`,
+    `${pathToFaucet}/secret_key.pem`
+  );
+};
 ```
 
 ## How to deploy every Contract
 And then, you can run **every** job using the follow commands:
-``` bash
+```bash
 npm run install:erc1820
 
 npm run install:erc777
