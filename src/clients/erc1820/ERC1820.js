@@ -70,7 +70,7 @@ class ERC1820 {
     ];
   }
 
-  setInterfaceImplementer = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  setInterfaceImplementer = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.SET_INTERFACE_IMPLEMENTER)
 
   getInterfaceImplementer = async (owner, interfaceTag) => {
     const values = utils.stringToArrayCLU8(interfaceTag)
@@ -89,7 +89,7 @@ class ERC1820 {
     return `account-hash-${Buffer.from(result.value().data).toString("hex")}`;
   }
 
-  setManager = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  setManager = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.SET_MANAGER)
 
   getManager = async (owner) => {
     const finalBytes = CLValueParsers.toBytes(owner).unwrap();
@@ -101,7 +101,7 @@ class ERC1820 {
     return `account-hash-${Buffer.from(result.value().data).toString("hex")}`;
   }
 
-  makeDeployment = async (runtimeArgs) => {
+  makeDeployment = async (runtimeArgs, entryPoint) => {
     let deploy = DeployUtil.makeDeploy(
         new DeployUtil.DeployParams(
             this.keyPairOfContract.publicKey,
@@ -111,7 +111,7 @@ class ERC1820 {
         ),
         DeployUtil.ExecutableDeployItem.newStoredContractByHash(
             this.contractHashAsByteArray,
-            entryPoints.AUTHORIZE_OPERATOR,
+            entryPoint,
             runtimeArgs
         ),
         DeployUtil.standardPayment(

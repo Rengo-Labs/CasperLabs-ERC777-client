@@ -95,17 +95,17 @@ class ERC777 {
     return result.data.toString();
   }
 
-  send = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  send = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.SEND)
 
-  burn = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  burn = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.BURN)
 
-  authorizeOperator = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  authorizeOperator = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.AUTHORIZE_OPERATOR)
 
-  revokeOperator = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  revokeOperator = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.REVOKE_OPERATOR)
 
-  operatorSend = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  operatorSend = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.OPERATOR_SEND)
 
-  operatorBurn = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  operatorBurn = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.OPERATOR_BURN)
 
   granularity = async () => {
     const result = await this.contractClient.queryContractData(["granularity"])
@@ -126,7 +126,7 @@ class ERC777 {
     return result.data.toString();
   }
 
-  makeDeployment = async (runtimeArgs) => {
+  makeDeployment = async (runtimeArgs, entryPoint) => {
     let deploy = DeployUtil.makeDeploy(
         new DeployUtil.DeployParams(
             this.keyPairOfContract.publicKey,
@@ -136,7 +136,7 @@ class ERC777 {
         ),
         DeployUtil.ExecutableDeployItem.newStoredContractByHash(
             this.contractHashAsByteArray,
-            entryPoints.AUTHORIZE_OPERATOR,
+            entryPoint,
             runtimeArgs
         ),
         DeployUtil.standardPayment(

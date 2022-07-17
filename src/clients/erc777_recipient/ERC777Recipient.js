@@ -66,11 +66,11 @@ class ERC777Recipient {
     ];
   }
 
-  burn = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  burn = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.BURN)
 
-  transfer = async (runtimeArgs) => this.makeDeployment(runtimeArgs)
+  transfer = async (runtimeArgs) => this.makeDeployment(runtimeArgs, entryPoints.TRANSFER)
 
-  makeDeployment = async (runtimeArgs) => {
+  makeDeployment = async (runtimeArgs, entryPoint) => {
     let deploy = DeployUtil.makeDeploy(
         new DeployUtil.DeployParams(
             this.keyPairOfContract.publicKey,
@@ -80,7 +80,7 @@ class ERC777Recipient {
         ),
         DeployUtil.ExecutableDeployItem.newStoredContractByHash(
             this.contractHashAsByteArray,
-            entryPoints.AUTHORIZE_OPERATOR,
+            entryPoint,
             runtimeArgs
         ),
         DeployUtil.standardPayment(
