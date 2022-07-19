@@ -142,19 +142,3 @@ export const getAccounts = () => {
   //**************************** for accounthash end*******************************/
   return {ownerHash, operatorHash, recipientHash}
 }
-
-/***
- * Default accounts to perform the operations
- * @returns {{ownerHash: CLAccountHash, operatorHash: CLAccountHash, recipientHash: CLAccountHash}}
- */
-export const getPublicAccounts = () => {
-  //**************************** for accounthash start*******************************/
-  //This is the account used for deploying every contract
-  const ownerKey = "0118a7fc9c6f062548b17ef4711acb522b497de36043e8086115e7252b3f9996be";
-  const ownerHash = CLPublicKey.fromHex(ownerKey).toAccountHash();
-
-  const secondKey = "013b8bd1f2bfc7241d69e7cba488bfca52e29d2836e1a8e62035719aee0b81f5f1";
-  const secondHash =  CLPublicKey.fromHex(secondKey).toAccountHash();
-  //**************************** for accounthash end*******************************/
-  return {ownerHash, secondHash}
-}
