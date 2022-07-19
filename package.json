@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "sdk for erc777",
   "scripts": {
+    "install:erc1337": "node -r esm -e 'require(\"./src/jobs/erc1337/installer.js\")'",
+    "run:erc1337": "node -r esm -e 'require(\"./src/jobs/erc1337/run.js\")'",
     "install:erc1820": "node -r esm -e 'require(\"./src/jobs/erc1820/installer.js\")'",
     "install:erc777": "node -r esm -e 'require(\"./src/jobs/erc777/installer.js\")'",
     "install:erc777_recipient": "node -r esm -e 'require(\"./src/jobs/erc777_recipient/installer.js\")'",
