@@ -1,4 +1,4 @@
-# ERC-777
+# ERC-777 Client
 
 The following is a set of rules and guidelines for contributing to this repo. Please feel free to propose changes to this document in a pull request.
 
